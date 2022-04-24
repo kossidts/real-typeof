@@ -46,6 +46,9 @@ let testValues = [
     // new BigUint64Array(),
 ];
 
+console.log(`${"Package".padEnd(20)}\t ${"Result".padEnd(25)}\t Performance`);
+console.log(`${"".padEnd(20, "-")}\t ${"".padEnd(25, "-")}\t ${"".padEnd(25, "-")}`);
+
 for (const testEntity of testValues) {
     const suite = new benchmark.Suite();
 
