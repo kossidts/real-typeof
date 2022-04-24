@@ -10,40 +10,40 @@ const libs = fs
     .map(file => ({ name: file.replace(".js", ""), func: require(`${libPath}/${file}`) }));
 
 let testValues = [
-    // undefined, // realTypeOf, kindOf +/-
-    // null, // realTypeOf, kindOf +/-
-    // "", // realTypeOf, kindOf +/-
-    // new String(), // realTypeOf by far
-    // 42, // realTypeOf, kindOf +/-
-    // NaN, // realTypeOf, kindOf +/-
-    // [], // realTypeOf by far
-    // new Array(), // realTypeOf by far
-    // new Date(), // realTypeOf by far
-    // new Error(), // realTypeOf by far
-    // Promise.resolve(), // realTypeOf by far
-    // new Promise((res, rej) => res()), // realTypeOf by far
-    // new Map(), // realTypeOf, typeof +/-, map expected but type-of returns 'object'
-    // new WeakMap(), //realTypeOf by far,  weakmap expected but type-of returns 'object'
-    // new Set(), // realTypeOf by far, set expected but type-of returns 'object'
-    // new WeakSet(), // realTypeOf by far, weakset expected but type-of returns 'object'
-    // () => {}, // realTypeOf, type-of +/-
-    // async () => {}, // asyncfunction expected but kindOf returns 'function' and type-of returns 'object'
-    // function* () {}, // generatorfunction expected but type-of returns 'object'
-    //
-    // {},
-    // arguments,
+    new Array(),
+    new Date(),
+    new Error(),
+    Promise.resolve(),
+    [],
+    new String(),
+    new Promise((res, rej) => res()),
+    new WeakMap(),
+    new Set(),
+    new WeakSet(),
+    undefined,
+    null,
+    "",
+    42,
+    NaN,
+    new Map(),
+    () => {},
+    async () => {},
+    function* () {},
+    BigInt("9007199254740991"),
+    {},
+    arguments,
     Buffer.from("test ultra lang war uint8array"),
     new Int8Array(),
-    // new Uint8Array(),
-    // new Uint8ClampedArray(),
-    // new Int16Array(),
-    // new Uint16Array(),
-    // new Int32Array(),
-    // new Uint32Array(),
-    // new Float32Array(),
-    // new Float64Array(),
-    // new BigInt64Array(),
-    // new BigUint64Array(),
+    new Uint8Array(),
+    new Uint8ClampedArray(),
+    new Int16Array(),
+    new Uint16Array(),
+    new Int32Array(),
+    new Uint32Array(),
+    new Float32Array(),
+    new Float64Array(),
+    new BigInt64Array(),
+    new BigUint64Array(),
 ];
 
 console.log(`${"Package".padEnd(20)}\t ${"Result".padEnd(25)}\t Performance`);
