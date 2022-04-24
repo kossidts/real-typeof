@@ -1,6 +1,6 @@
 const toString = Object.prototype.toString;
 
-function real_typeof(arg, depth) {
+function real_typeof(arg, deep) {
     if (arg === null) return "null";
 
     if (arg === undefined) return "undefined";
@@ -16,10 +16,10 @@ function real_typeof(arg, depth) {
     if (type === "symbol") return "symbol";
 
     // BigInt (new in ECMAScript 2020)
-    if (type === "bigint") return depth !== true ? "number" : "bigint";
+    if (type === "bigint") return deep !== true ? "number" : "bigint";
 
     if (type === "function") {
-        if (depth !== true) return "function";
+        if (deep !== true) return "function";
 
         return arg.constructor.name.toLowerCase();
     }
@@ -32,9 +32,11 @@ function real_typeof(arg, depth) {
     if (arg instanceof Date) return "date";
     if (arg instanceof Error) return "error";
     if (arg instanceof Map) return "map";
-    if (arg instanceof WeakMap) return depth !== true ? "map" : "weakmap";
+    if (arg instanceof WeakMap) return "weakmap";
+    // if (arg instanceof WeakMap) return deep !== true ? "map" : "weakmap";
     if (arg instanceof Set) return "set";
-    if (arg instanceof WeakSet) return depth !== true ? "set" : "weakset";
+    if (arg instanceof WeakSet) return "weakset";
+    // if (arg instanceof WeakSet) return deep !== true ? "set" : "weakset";
 
     // if (arg instanceof Buffer) return "buffer";
     // if (arg.constructor && arg.constructor.name === "Buffer") return "buffer";
@@ -61,7 +63,7 @@ function real_typeof(arg, depth) {
 
     type = type.slice(8, -1).toLowerCase();
 
-    if (depth !== true && type.indexOf("function") != -1) return "function";
+    if (deep !== true && type.indexOf("function") != -1) return "function";
 
     if (type.indexOf(" ") != -1) {
         return type.replace(/\s/g, "");
