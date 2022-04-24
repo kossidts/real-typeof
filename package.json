@@ -1,0 +1,19 @@
+{
+    "name": "@kdts/real-typeof",
+    "version": "1.0.0",
+    "description": "Retrieve the real type of a variable",
+    "main": "index.js",
+    "keywords": [
+        "typeof",
+        "type of",
+        "real typeof",
+        "real-typeof",
+        "real_typeof",
+        "real type of",
+        "real-type-of",
+        "real_type_of",
+        "deep typeof",
+        "isNumber"
+    ],
+    "author": "Kossi D. T. S."
+}
