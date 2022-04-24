@@ -1,48 +1,96 @@
-# Real type of
+# Real Typeof
 
-Retrieve the real type of a variable. A more accurate version of the `typeof` operator.
+[![License][license-image]][license-url] [![NPM Package Version][npm-image-version]][npm-url] ![GitHub top language][language-image] ![Size][size-image] ![Last Commit][commit-image]
 
-```js
-real_type_of("") === "string";
-real_type_of() === "undefined";
-real_type_of(42) === "number";
-real_type_of({}) === "object";
-real_type_of([]) === "array";
-real_type_of(null) === "null";
-real_type_of(new Date()) === "date";
-real_type_of(new Set()) === "set";
-real_type_of(new WeakSet()) === "weakset";
-real_type_of(new WeakMap()) === "weakmap";
-real_type_of(() => {}) === "function";
-real_type_of(async () => {}) === "function";
-real_type_of(function* () {}) === "function";
-```
+Retrieve the real type of a variable, a more accurate version of the `typeof` operator. This module has been improved for performance and is getting better overtime.
 
-Pass in `true` as a second parameter to get even more accurate results
-
-```js
-real_type_of(() => {}, true) === "function";
-real_type_of(async () => {}, true) === "asyncfunction";
-real_type_of(function* () {}, true) === "generatorfunction";
-// ... everything else remains the same
-```
-
-## Install
+## Installation
 
 ```bash
-$ npm install @christophe.kdts/real_type_of
+$ npm i @kdts/real-typeof
 ```
 
 ## Usage
 
-```js
-const real_type_of = require("@christophe.kdts/real_type_of");
+##### Require CommonJS (default)
 
-let type = real_type_of(some_varibale);
+```js
+const real_typeof = require("@kdts/real-typeof");
+```
+
+##### Import ES-Module (default)
+
+```js
+import real_typeof from "@kdts/real-typeof";
+```
+
+##### Import ES-Module (named)
+
+```js
+import { real_typeof } from "@kdts/real-typeof";
+```
+
+#### Use in Code ([more examples below](#some-examples))
+
+```js
+let type = real_typeof(some_varibale);
 
 if (type == "date") {
     // ...
 } else if (type == "array") {
     // ...
 }
+
+real_typeof("") === "string";
+real_typeof() === "undefined";
+real_typeof(42) === "number";
+real_typeof({}) === "object";
+real_typeof([]) === "array";
+real_typeof(null) === "null";
+real_typeof(new Date()) === "date";
+real_typeof(new Set()) === "set";
+real_typeof(new WeakSet()) === "weakset";
+real_typeof(new WeakMap()) === "weakmap";
+real_typeof(BigInt("9007199254740991")) === "number";
+real_typeof(() => {}) === "function";
+real_typeof(async () => {}) === "function";
+real_typeof(function* () {}) === "function";
 ```
+
+Pass in `true` as a second parameter to get even more accurate results
+
+```js
+real_typeof(BigInt("9007199254740991")) === "bigint";
+real_typeof(() => {}, true) === "function";
+real_typeof(async () => {}, true) === "asyncfunction";
+real_typeof(function* () {}, true) === "generatorfunction";
+// ... everything else remains the same
+```
+
+## Benchmark
+
+```bash
+npm run benchmark
+```
+
+This might take a while to finish but generate outputs on progress. As any benchmark the results are never accurate and every iteration will return different result.
+
+## License
+
+See [LICENSE][license-url].
+
+## Copyright
+
+Copyright &copy; 2022. Kossi D. T. Saka.
+
+[npm-image-version]: https://img.shields.io/npm/v/@kdts/real-typeof.svg
+[npm-image-downloads]: https://img.shields.io/npm/dm/@kdts/real-typeof.svg?color=purple
+[npm-url]: https://npmjs.org/package/@kdts/real-typeof
+[license-image]: https://img.shields.io/github/license/kossidts/real-typeof
+[license-url]: https://github.com/kossidts/real-typeof/blob/master/LICENSE
+[language-image]: https://img.shields.io/github/languages/top/kossidts/real-typeof?color=yellow
+[size-image]: https://img.shields.io/github/repo-size/kossidts/real-typeof?color=light
+[commit-image]: https://img.shields.io/github/last-commit/kossidts/real-typeof
+[actions-url]: https://github.com/kossidts/real-typeof/actions
+[workflow-image]: https://github.com/kossidts/real-typeof/actions/workflows/node.js.yml/badge.svg
+[workflow-image-2]: https://github.com/kossidts/real-typeof/workflows/Node.js%20CI/badge.svg
