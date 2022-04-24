@@ -3,6 +3,9 @@
     "version": "1.0.0",
     "description": "Retrieve the real type of a variable",
     "main": "index.js",
+    "scripts": {
+        "benchmark": "node benchmark"
+    },
     "exports": {
         "import": "./wrapper.mjs",
         "require": "./index.js"
@@ -28,5 +31,8 @@
     ],
     "type": "commonjs",
     "author": "Kossi D. T. Saka",
-    "license": "MIT"
+    "license": "MIT",
+    "devDependencies": {
+        "benchmark": "^2.1.4"
+    }
 }
