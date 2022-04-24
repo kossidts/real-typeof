@@ -3,17 +3,30 @@
     "version": "1.0.0",
     "description": "Retrieve the real type of a variable",
     "main": "index.js",
+    "exports": {
+        "import": "./wrapper.mjs",
+        "require": "./index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/kossidts/real-typeof.git"
+    },
+    "homepage": "https://github.com/kossidts/real-typeof#readme",
+    "bugs": {
+        "url": "https://github.com/kossidts/real-typeof/issues"
+    },
     "keywords": [
         "typeof",
         "type of",
         "real typeof",
         "real-typeof",
-        "real_typeof",
         "real type of",
         "real-type-of",
         "real_type_of",
         "deep typeof",
         "isNumber"
     ],
-    "author": "Kossi D. T. S."
+    "type": "commonjs",
+    "author": "Kossi D. T. Saka",
+    "license": "MIT"
 }
