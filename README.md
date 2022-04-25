@@ -2,7 +2,9 @@
 
 [![License][license-image]][license-url] [![NPM Package Version][npm-image-version]][npm-url] ![GitHub top language][language-image] ![Size][size-image] ![Last Commit][commit-image]
 
-Retrieve the real type of a variable, a more accurate version of the `typeof` operator. This module has been improved for performance and is getting better overtime.
+Retrieve the real type of a variable, a more accurate version of the `typeof` operator.
+
+**This module has been improved for performance and it is getting better overtime.**
 
 ## Installation
 
@@ -69,11 +71,11 @@ real_typeof(function* () {}, true) === "generatorfunction";
 
 ## Benchmark
 
+It will take a while to finish but it generate outputs on progress. As any benchmark the results are never accurate and every iteration will return different results. But if you are curious then run:
+
 ```bash
 npm run benchmark
 ```
-
-This might take a while to finish but generate outputs on progress. As any benchmark the results are never accurate and every iteration will return different result.
 
 ## License
 
