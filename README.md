@@ -62,7 +62,7 @@ real_typeof(function* () {}) === "function";
 Pass in `true` as a second parameter to get even more accurate results
 
 ```js
-real_typeof(BigInt("9007199254740991")) === "bigint";
+real_typeof(BigInt("9007199254740991"), true) === "bigint";
 real_typeof(() => {}, true) === "function";
 real_typeof(async () => {}, true) === "asyncfunction";
 real_typeof(function* () {}, true) === "generatorfunction";
