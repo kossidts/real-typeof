@@ -48,6 +48,7 @@ real_typeof() === "undefined";
 real_typeof(42) === "number";
 real_typeof({}) === "object";
 real_typeof([]) === "array";
+real_typeof(/\d/) === "regexp";
 real_typeof(null) === "null";
 real_typeof(new Date()) === "date";
 real_typeof(new Set()) === "set";
