@@ -31,6 +31,7 @@ function real_typeof(arg, deep) {
     if (arg instanceof Number) return "number";
     if (arg instanceof Date) return "date";
     if (arg instanceof Error) return "error";
+    if (arg instanceof RegExp) return "regexp";
     if (arg instanceof Map) return "map";
     if (arg instanceof WeakMap) return "weakmap";
     // if (arg instanceof WeakMap) return deep !== true ? "map" : "weakmap";
