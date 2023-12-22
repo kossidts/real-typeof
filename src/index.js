@@ -1,5 +1,11 @@
 const toString = Object.prototype.toString;
 
+/**
+ * Returns the type of the given argument.
+ * @param {*} arg - Any type variable
+ * @param {boolean} [deep=false] - Whether or not to distinguish between function types
+ * @returns {string}
+ */
 function real_typeof(arg, deep) {
     if (arg === null) return "null";
 
@@ -56,6 +62,7 @@ function real_typeof(arg, deep) {
     if (arg instanceof BigInt64Array) return "bigint64array";
     if (arg instanceof BigUint64Array) return "biguint64array";
 
+    /** @type {any} */
     type = toString.call(arg);
 
     if (type === "[object Object]") return "object";

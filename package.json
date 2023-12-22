@@ -2,13 +2,15 @@
     "name": "@kdts/real-typeof",
     "version": "1.0.4",
     "description": "Retrieve the real type of a variable, a more accurate version of the `typeof` operator. This module has been improved for performance and is getting better overtime.",
-    "main": "index.js",
+    "main": "./src/index.js",
     "scripts": {
-        "benchmark": "node benchmark"
+        "benchmark": "node benchmark",
+        "build:type": "tsc"
     },
     "exports": {
-        "import": "./wrapper.mjs",
-        "require": "./index.js"
+        "import": "./src/wrapper.mjs",
+        "require": "./src/index.js",
+        "types": "./types/index.d.ts"
     },
     "repository": {
         "type": "git",
@@ -33,10 +35,12 @@
     "author": "Kossi D. T. Saka",
     "license": "MIT",
     "devDependencies": {
-        "benchmark": "^2.1.4"
+        "benchmark": "^2.1.4",
+        "typescript": "^5.3.3"
     },
+    "types": "./types/index.d.ts",
     "files": [
-        "index.js",
-        "wrapper.mjs"
+        "./src/index.js",
+        "./src/wrapper.mjs"
     ]
 }
