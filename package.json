@@ -14,6 +14,7 @@
         "./src/wrapper.mjs",
         "./types/index.d.ts"
     ],
+    "type": "commonjs",
     "scripts": {
         "benchmark": "node benchmark",
         "build:type": "tsc"
@@ -37,7 +38,6 @@
         "deep typeof",
         "isNumber"
     ],
-    "type": "commonjs",
     "author": "Kossi D. T. Saka",
     "license": "MIT",
     "devDependencies": {
