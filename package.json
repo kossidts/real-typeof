@@ -1,6 +1,6 @@
 {
     "name": "@kdts/real-typeof",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "Retrieve the real type of a variable, a more accurate version of the `typeof` operator. This module has been improved for performance and is getting better overtime.",
     "main": "./src/index.js",
     "scripts": {
