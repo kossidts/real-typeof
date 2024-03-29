@@ -41,6 +41,7 @@
     "types": "./types/index.d.ts",
     "files": [
         "./src/index.js",
-        "./src/wrapper.mjs"
+        "./src/wrapper.mjs",
+        "./types/index.d.ts"
     ]
 }
