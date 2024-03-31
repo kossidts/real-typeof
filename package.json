@@ -4,20 +4,27 @@
     "description": "Retrieve the real type of a variable, a more accurate version of the `typeof` operator. This module has been improved for performance and is getting better overtime.",
     "main": "./src/index.js",
     "exports": {
-        "import": "./src/wrapper.mjs",
-        "require": "./src/index.js",
-        "types": "./types/index.d.ts"
+        ".": {
+            "import": {
+                "types": "./types/wrapper.d.mts",
+                "default": "./src/wrapper.mjs"
+            },
+            "require": {
+                "types": "./types/index.d.ts",
+                "default": "./src/index.js"
+            }
+        }
     },
-    "types": "./types/index.d.ts",
     "files": [
         "./src/index.js",
         "./src/wrapper.mjs",
-        "./types/index.d.ts"
+        "./types/index.d.ts",
+        "./types/wrapper.d.mts"
     ],
     "type": "commonjs",
     "scripts": {
         "benchmark": "node benchmark",
-        "build:type": "tsc"
+        "build:type": "tsc --build --force"
     },
     "repository": {
         "type": "git",
@@ -42,6 +49,6 @@
     "license": "MIT",
     "devDependencies": {
         "benchmark": "^2.1.4",
-        "typescript": "^5.3.3"
+        "typescript": "^5.4.3"
     }
 }

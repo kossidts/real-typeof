@@ -32,6 +32,8 @@ import real_typeof from "@kdts/real-typeof";
 import { real_typeof } from "@kdts/real-typeof";
 ```
 
+> ℹ️ **When using typescript make sure to set the compiler option `moduleResolution` to `Node16` or `NodeNext`.**
+
 #### Use in Code ([more examples below](#some-examples))
 
 ```js
