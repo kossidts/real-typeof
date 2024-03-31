@@ -2,9 +2,11 @@
     "include": ["src/**/*"],
     "compilerOptions": {
         "allowJs": true,
-        "checkJs": false,
+        "checkJs": true,
         "declaration": true,
         "emitDeclarationOnly": true,
-        "declarationDir": "./types"
+        "declarationDir": "./types",
+        "lib": ["ES2020"],
+        "esModuleInterop": true
     }
 }

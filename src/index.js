@@ -1,5 +1,7 @@
 const toString = Object.prototype.toString;
 
+// * @typedef {Function} RealTypeof - Returns the type of the given argument as a string.
+
 /**
  * Returns the type of the given argument as a string.
  * @param {*} arg - Any type variable
@@ -11,7 +13,7 @@ function real_typeof(arg, deep) {
 
     if (arg === undefined) return "undefined";
 
-    let type = typeof arg;
+    let type = /** @type {string} */ (typeof arg);
     if (type === "boolean") return "boolean";
 
     if (type === "number") return "number";
@@ -62,7 +64,6 @@ function real_typeof(arg, deep) {
     if (arg instanceof BigInt64Array) return "bigint64array";
     if (arg instanceof BigUint64Array) return "biguint64array";
 
-    /** @type {any} */
     type = toString.call(arg);
 
     if (type === "[object Object]") return "object";
@@ -81,3 +82,4 @@ function real_typeof(arg, deep) {
 }
 
 module.exports = real_typeof;
+// module.exports.default = real_typeof;
